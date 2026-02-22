@@ -32,8 +32,10 @@ const WhyChooseUs = () => (
           <span className="text-gold-gradient">Choosing Us!</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Our commitment to transparency, timely service, and customer
-          satisfaction sets us apart in the chit fund industry.
+          People choose RK Rudra Chit Funds for our transparent process, reliable
+          management, and commitment to timely payouts. We focus on building
+          long-term trust by maintaining clear documentation, fair auctions, and
+          responsive customer support.
         </p>
       </div>
 
