@@ -57,7 +57,7 @@ const HeroSection = () => {
               <div className="absolute -bottom-6 -left-6 bg-card rounded-xl shadow-xl p-4 animate-float">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-lg gold-gradient flex items-center justify-center">
-                    <span className="text-primary-foreground text-lg font-bold">4+</span>
+                    <span className="text-primary-foreground text-lg font-bold">20+</span>
                   </div>
                   <div>
                     <p className="text-foreground font-semibold text-sm">Years</p>

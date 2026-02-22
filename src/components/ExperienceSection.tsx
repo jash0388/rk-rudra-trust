@@ -29,8 +29,8 @@ const AnimatedCounter = ({ target, suffix = "" }: { target: number; suffix?: str
   }, [target]);
 
   return (
-    <div ref={ref} className="font-heading text-6xl md:text-7xl font-bold text-gold-gradient">
-      {count}+{suffix && <span className="text-3xl ml-1">{suffix}</span>}
+    <div ref={ref} className="font-heading text-7xl md:text-8xl font-bold text-gold-gradient">
+      {count}+
     </div>
   );
 };
@@ -41,7 +41,7 @@ const ExperienceSection = () => (
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left */}
         <div className="text-center lg:text-left">
-          <AnimatedCounter target={4} />
+          <AnimatedCounter target={20} />
           <p className="text-foreground text-xl font-semibold mt-2 mb-2">Years Experience</p>
           <p className="text-muted-foreground">
             Serving families with trust and integrity since our inception.
@@ -57,7 +57,7 @@ const ExperienceSection = () => (
 
           <div className="space-y-4 mb-6">
             {[
-              { icon: Shield, text: "Flexible Insurance Plans" },
+              { icon: Shield, text: "Flexible Chitti Plans" },
               { icon: RefreshCw, text: "Money Back Guarantee" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3">
