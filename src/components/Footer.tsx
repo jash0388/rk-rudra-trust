@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -23,9 +24,7 @@ const Footer = () => {
           {/* Col 1 */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center font-heading font-bold text-primary-foreground text-lg">
-                RK
-              </div>
+              <img src={logo} alt="RK Rudra Logo" className="w-12 h-12 rounded-full object-cover" />
               <span className="font-heading text-lg font-bold">RK RUDRA</span>
             </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">

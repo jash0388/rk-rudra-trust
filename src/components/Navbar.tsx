@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -35,9 +36,7 @@ const Navbar = () => {
     >
       <div className="container-max px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2" onClick={() => handleClick("#home")}>
-          <div className="w-10 h-10 rounded-lg gold-gradient flex items-center justify-center font-heading font-bold text-primary-foreground text-lg">
-            RK
-          </div>
+          <img src={logo} alt="RK Rudra Chit Funds Logo" className="w-12 h-12 rounded-full object-cover" />
           <span className="font-heading text-xl font-bold text-primary-foreground tracking-wide">
             RK RUDRA
           </span>
