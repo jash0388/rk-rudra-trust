@@ -1,41 +1,42 @@
-import { Eye, Clock, ShieldCheck, PiggyBank } from "lucide-react";
+import { Eye, Clock, ShieldCheck, PiggyBank, ArrowRight } from "lucide-react";
 
 const features = [
   {
     icon: Eye,
-    title: "Transparent Process",
-    desc: "Every auction and transaction is conducted with complete openness and accountability.",
+    title: "Complete Transparency",
+    desc: "Every auction and transaction is conducted with cryptographic openness and real-time accountability.",
   },
   {
     icon: Clock,
-    title: "Timely Payouts",
-    desc: "We ensure prompt disbursement of funds so our members can rely on their financial plans.",
+    title: "Instant Liquidity",
+    desc: "We prioritize prompt disbursement, ensuring you have access to your funds exactly when planned.",
   },
   {
     icon: ShieldCheck,
-    title: "Trusted Management",
-    desc: "Experienced team managing chit operations with the highest standards of governance.",
+    title: "Elite Governance",
+    desc: "Managed by industry veterans following the highest standards of financial integrity and compliance.",
   },
   {
     icon: PiggyBank,
-    title: "Money Saving",
-    desc: "Structured savings discipline that helps families accumulate wealth over time.",
+    title: "Smart Accumulation",
+    desc: "A disciplined, goal-oriented savings framework engineered for long-term family wealth creation.",
   },
 ];
 
 const WhyChooseUs = () => (
-  <section id="features" className="section-padding bg-muted">
-    <div className="container-max">
-      <div className="text-center mb-14">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Few Reasons Why People{" "}
-          <span className="text-gold-gradient">Choosing Us!</span>
+  <section id="features" className="section-padding bg-white relative overflow-hidden px-6 lg:px-8">
+    <div className="container-max relative z-10">
+      <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide mb-4">
+          Why Choose Us
+        </div>
+        <h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold text-navy mb-4">
+          Engineered for <br />
+          <span className="text-primary">Financial Excellence.</span>
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          People choose RK Rudra Chit Funds for our transparent process, reliable
-          management, and commitment to timely payouts. We focus on building
-          long-term trust by maintaining clear documentation, fair auctions, and
-          responsive customer support.
+        <p className="text-gray-500 text-base leading-relaxed">
+          RK Rudra combines decades of trust with modern financial efficiency
+          to deliver a superior chit fund experience.
         </p>
       </div>
 
@@ -43,15 +44,18 @@ const WhyChooseUs = () => (
         {features.map(({ icon: Icon, title, desc }) => (
           <div
             key={title}
-            className="bg-card rounded-xl p-6 shadow-sm card-hover group"
+            className="group bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300"
           >
-            <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:gold-gradient transition-all duration-300">
-              <Icon size={24} className="text-accent-foreground group-hover:text-primary-foreground transition-colors" />
+            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+              <Icon size={24} />
             </div>
-            <h3 className="font-heading text-lg font-bold text-foreground mb-2">
+
+            <h3 className="font-heading text-lg font-semibold text-navy mb-2">
               {title}
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              {desc}
+            </p>
           </div>
         ))}
       </div>

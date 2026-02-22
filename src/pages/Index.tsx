@@ -4,6 +4,7 @@ import TrustSection from "@/components/TrustSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ServicesSection from "@/components/ServicesSection";
+import ChitPlansSection from "@/components/ChitPlansSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -14,10 +15,11 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <TrustSection />
         <ExperienceSection />
-        <WhyChooseUs />
         <ServicesSection />
+        <WhyChooseUs />
+        <ChitPlansSection />
+        <TrustSection />
         <ContactSection />
       </main>
       <Footer />

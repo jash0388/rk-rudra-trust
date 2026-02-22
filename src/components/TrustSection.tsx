@@ -1,95 +1,106 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Shield, Users, TrendingUp } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-const slides = [
+const testimonials = [
   {
-    icon: Shield,
-    title: "Secure & Registered",
-    desc: "Fully registered chit fund company operating under regulatory compliance in Hyderabad.",
+    name: "Suresh Kumar",
+    role: "Business Owner",
+    text: "RK Rudra has transformed my approach to capital. Their transparency in auctions and prompt payments have been instrumental in my business expansion.",
+    rating: 5,
   },
   {
-    icon: Users,
-    title: "Family-Focused Savings",
-    desc: "Helping thousands of families build a stronger financial future through disciplined savings.",
+    name: "Anjali Rao",
+    role: "Education Professional",
+    text: "I've been a member for 5 years. The systematic savings discipline combined with great dividends makes it the best financial decision for my family.",
+    rating: 5,
   },
   {
-    icon: TrendingUp,
-    title: "Consistent Growth",
-    desc: "Our members enjoy reliable returns and timely payouts through transparent operations.",
+    name: "Prakash Reddy",
+    role: "Software Engineer",
+    text: "Modern, professional, and reliable. Their registration with the government gives me peace of mind. Highly recommend for goal-based savings.",
+    rating: 5,
   },
 ];
 
 const TrustSection = () => {
   const [current, setCurrent] = useState(0);
 
-  const prev = () => setCurrent((c) => (c === 0 ? slides.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === slides.length - 1 ? 0 : c + 1));
+  const next = () => setCurrent((c) => (c + 1) % testimonials.length);
+  const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="about" className="section-padding bg-muted">
-      <div className="container-max text-center">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Trusted & Transparent Chit Fund Services{" "}
-          <span className="text-gold-gradient">in Hyderabad</span>
-        </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-          Helping families grow their savings with secure, registered, and
-          well-managed chit plans.
-        </p>
+    <section id="trust" className="section-padding bg-white relative overflow-hidden px-6 lg:px-8">
+      {/* Visual Decor */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-full blur-[120px] translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-secondary/5 rounded-full blur-[100px] -translate-x-1/2" />
 
-        <div className="relative max-w-4xl mx-auto">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={prev}
-              className="shrink-0 w-10 h-10 rounded-full bg-card shadow-md flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
-              aria-label="Previous"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            <div className="flex-1 overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-out"
-                style={{ transform: `translateX(-${current * 100}%)` }}
-              >
-                {slides.map((slide, i) => (
-                  <div key={i} className="w-full shrink-0 px-2">
-                    <div className="bg-card rounded-xl shadow-lg p-8 md:p-12">
-                      <div className="w-16 h-16 rounded-xl gold-gradient flex items-center justify-center mx-auto mb-6">
-                        <slide.icon size={28} className="text-primary-foreground" />
-                      </div>
-                      <h3 className="font-heading text-xl font-bold text-foreground mb-3">
-                        {slide.title}
-                      </h3>
-                      <p className="text-muted-foreground max-w-md mx-auto">
-                        {slide.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      <div className="container-max relative z-10">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide">
+              Success Stories
             </div>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-5xl font-bold text-navy leading-tight">
+              Why Our Members <br />
+              <span className="text-primary">Trust Us.</span>
+            </h2>
+            <p className="text-gray-500 text-base leading-relaxed max-w-md">
+              Real voices from our growing community of 10,000+ satisfied members
+              achieving their financial dreams.
+            </p>
 
-            <button
-              onClick={next}
-              className="shrink-0 w-10 h-10 rounded-full bg-card shadow-md flex items-center justify-center text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
-              aria-label="Next"
-            >
-              <ChevronRight size={20} />
-            </button>
+            <div className="flex gap-4">
+              <button
+                onClick={prev}
+                className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-navy hover:text-white transition-colors"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={next}
+                className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-md hover:shadow-primary/30 transition-colors"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
           </div>
 
-          <div className="flex justify-center gap-2 mt-6">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  i === current ? "bg-secondary w-8" : "bg-border"
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+          <div className="lg:col-span-7 relative">
+            <div className="relative z-10 h-[400px]">
+              {testimonials.map((t, i) => (
+                <div
+                  key={i}
+                  className={`absolute inset-0 transition-all duration-500 flex flex-col justify-center ${i === current ? "opacity-100 scale-100 translate-x-0" : "opacity-0 scale-95 translate-x-10 pointer-events-none"
+                    }`}
+                >
+                  <div className="bg-gray-50 rounded-2xl p-8 lg:p-10 shadow-lg relative">
+                    <div className="absolute top-4 right-4 text-primary/10">
+                      <Quote size={80} strokeWidth={0.5} />
+                    </div>
+
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(t.rating)].map((_, i) => (
+                        <Star key={i} size={14} className="fill-secondary text-secondary" />
+                      ))}
+                    </div>
+
+                    <p className="text-navy text-base leading-relaxed mb-6">
+                      "{t.text}"
+                    </p>
+
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold">
+                        {t.name[0]}
+                      </div>
+                      <div>
+                        <h4 className="text-navy font-semibold">{t.name}</h4>
+                        <p className="text-gray-400 text-xs">{t.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
